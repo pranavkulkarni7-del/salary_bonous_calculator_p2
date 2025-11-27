@@ -1,21 +1,13 @@
 import sys
 
-if len(sys.argv) != 2:
-    print("Usage: python bonus_calculator.py <salary>")
+if len(sys.argv)==2:
+  script_name=sys.argv[0]
+  salary=float(sys.argv[1])
 else:
-  salary = float(sys.argv[1])
-  
-    try:
-        salary = float(sys.argv[1])
-      
-        if salary > 0:
-            bonus = salary * 0.10
-            total_salary = salary + bonus
+  script_name=sys.argv[0]
+  salary=10000
 
-            print("Bonus Amount: $", bonus)
-            print("Total Salary after adding bonus: $", total_salary)
-        else:
-            print("Salary must be greater than 0.")
+bonus= salary*0.10
+finalSalary=bonus+salary
 
-    except ValueError:
-        print("Please enter a valid number for salary.")
+print(f"bonus: {bonus}\nFinal salary:{finalSalary}")
